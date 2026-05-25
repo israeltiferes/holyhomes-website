@@ -91,7 +91,7 @@ nav{
 /* ════════════════════════════════════════════════════
    PAGE 1 — HOME
 ════════════════════════════════════════════════════ */
-.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1fr 1fr}
+.hero{min-height:calc(100vh - 76px);display:grid;grid-template-columns:45fr 55fr}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 56px;animation:fadeUp 0.8s 0.2s ease both}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .hero-eyebrow{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
@@ -103,20 +103,12 @@ nav{
 .hero-stats{display:flex;gap:32px;margin-top:48px;padding-top:36px;border-top:1px solid rgba(201,165,80,0.25)}
 .stat-num{font-family:var(--serif);font-size:36px;color:var(--navy);line-height:1}
 .stat-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);margin-top:4px}
-.hero-right{background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:56px 48px;position:relative;overflow:hidden;animation:fadeUp 0.8s 0.4s ease both}
-.hero-right-grid{position:absolute;inset:0;opacity:0.035;background-image:repeating-linear-gradient(0deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 32px),repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 1px,transparent 0,transparent 32px)}
-.hero-right-label{font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(201,165,80,0.5);margin-bottom:16px;position:relative;z-index:1}
-.city-list{position:relative;z-index:1}
-.city-item{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(201,165,80,0.1);cursor:pointer;transition:padding-left 0.2s}
-.city-item:hover{padding-left:8px}
-.city-item:last-child{border-bottom:none}
-.city-name{font-family:var(--serif);font-size:22px;font-weight:300;color:white;transition:color 0.2s}
-.city-item:hover .city-name{color:var(--gold-lt)}
-.city-count{font-size:11px;color:var(--gold)}
-.city-from{font-size:10px;color:rgba(255,255,255,0.28);margin-top:2px;text-align:right}
-.hero-quote{position:relative;z-index:1;margin-top:36px;padding-top:28px;border-top:1px solid rgba(201,165,80,0.15)}
-.hero-quote-text{font-family:var(--serif);font-size:15px;font-style:italic;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6}
-.hero-quote-src{font-size:8px;letter-spacing:0.16em;color:var(--gold);margin-top:8px;text-transform:uppercase}
+/* Hero Video Panel */
+.hero-right{padding:20px 20px 20px 0;position:relative;overflow:visible;animation:fadeUp 0.8s 0.4s ease both}
+.hero-video-wrap{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,0.32)}
+.hero-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-vid-bottom{position:absolute;bottom:0;left:0;right:0;height:44%;background:linear-gradient(to top,rgba(0,0,0,0.4),transparent);pointer-events:none;z-index:1}
+.hero-vid-left{position:absolute;top:0;left:0;bottom:0;width:130px;background:linear-gradient(to right,var(--cream),transparent);pointer-events:none;z-index:2}
 
 /* Why Israel Section */
 .why-section{padding:100px 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
@@ -412,7 +404,9 @@ footer{background:#080F1E;padding:48px 56px 32px}
   .hero,.why-section,.tours-section,.tours-hero,.work-hero,.story-hero,.tax-inner,.tour-apply,.contact-content,.edu-inner,.why-hero,.work-panels,.projects-grid,.reasons-grid,.tour-details-grid{grid-template-columns:1fr}
   .hero-left,.hero-right,.why-section,.tours-section,.tours-hero,.work-hero,.story-hero,.tax-section,.tour-apply,.contact-content,.edu-content,.all-projects,.projects-filter,.project-card,.projects-section,.cta-section,.mission-strip,.footer-top,.footer-links,.edu-strip{padding-left:24px;padding-right:24px}
   .hero-headline,.section-title,.cta-headline{font-size:38px}
-  .hero-right{display:none}
+  .hero-right{display:block;padding:0;height:260px;overflow:hidden}
+  .hero-video-wrap{border-radius:0;height:260px}
+  .hero-vid-left{display:none}
   .tours-content{padding-right:0}
   .story-photo{height:300px}
   .city-projects-grid{grid-template-columns:1fr}
@@ -533,115 +527,14 @@ footer{background:#080F1E;padding:48px 56px 32px}
       </div>
     </div>
     <div class="hero-right">
-      <div class="hero-right-grid"></div>
-      <div style="position:relative;z-index:1;display:flex;flex-direction:column;height:100%;padding:44px 40px;gap:0">
-
-        <!-- Panel header -->
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-          <div>
-            <div style="font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,165,80,0.5)">Live Portfolio</div>
-            <h2 style="font-family:var(--serif);font-size:24px;font-weight:300;color:white;line-height:1.2;margin-top:3px">Find Your City.<br><em style="color:var(--gold);font-style:italic">Find Your Home.</em></h2>
-          </div>
-          <div style="text-align:right">
-            <div style="font-size:8px;letter-spacing:0.12em;color:rgba(201,165,80,0.45);text-transform:uppercase">55+ active</div>
-            <div style="font-family:var(--serif);font-size:20px;color:var(--gold)">developments</div>
-          </div>
-        </div>
-
-        <div style="width:40px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin-bottom:20px"></div>
-
-        <!-- City investment cards -->
-        <div style="display:flex;flex-direction:column;gap:5px;flex:1">
-
-          <div onclick="showPage('projects')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,80,0.1);padding:11px 14px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='rgba(201,165,80,0.09)';this.style.borderLeftColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderLeftColor='transparent'">
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;background:rgba(201,165,80,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">🏛️</div>
-              <div><div style="font-family:var(--serif);font-size:16px;color:white;line-height:1">Jerusalem</div><div style="font-size:9px;color:rgba(255,255,255,0.28);margin-top:1px">7 developments</div></div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--gold-lt);font-family:var(--serif)">from ₪2.3M</div>
-              <div style="font-size:8px;letter-spacing:0.08em;background:rgba(201,165,80,0.15);color:var(--gold);padding:1px 5px;text-transform:uppercase;margin-top:2px">🔥 Exclusive</div>
-            </div>
-          </div>
-
-          <div onclick="showPage('projects')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,80,0.1);padding:11px 14px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='rgba(201,165,80,0.09)';this.style.borderLeftColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderLeftColor='transparent'">
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;background:rgba(201,165,80,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">🌊</div>
-              <div><div style="font-family:var(--serif);font-size:16px;color:white;line-height:1">Tel Aviv</div><div style="font-size:9px;color:rgba(255,255,255,0.28);margin-top:1px">3 developments · 50-floor towers</div></div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--gold-lt);font-family:var(--serif)">from ₪3.1M</div>
-              <div style="font-size:8px;letter-spacing:0.08em;background:rgba(201,165,80,0.15);color:var(--gold);padding:1px 5px;text-transform:uppercase;margin-top:2px">Iconic</div>
-            </div>
-          </div>
-
-          <div onclick="showPage('projects')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,80,0.1);padding:11px 14px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='rgba(201,165,80,0.09)';this.style.borderLeftColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderLeftColor='transparent'">
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;background:rgba(201,165,80,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">🌴</div>
-              <div><div style="font-family:var(--serif);font-size:16px;color:white;line-height:1">Eilat</div><div style="font-size:9px;color:rgba(255,255,255,0.28);margin-top:1px">Red Sea · VAT-free zone</div></div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--gold-lt);font-family:var(--serif)">from ₪1.89M</div>
-              <div style="font-size:8px;letter-spacing:0.08em;background:rgba(201,165,80,0.15);color:var(--gold);padding:1px 5px;text-transform:uppercase;margin-top:2px">VAT-Free</div>
-            </div>
-          </div>
-
-          <div onclick="showPage('projects')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,80,0.1);padding:11px 14px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='rgba(201,165,80,0.09)';this.style.borderLeftColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderLeftColor='transparent'">
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;background:rgba(201,165,80,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">🏖️</div>
-              <div><div style="font-family:var(--serif);font-size:16px;color:white;line-height:1">Netanya</div><div style="font-size:9px;color:rgba(255,255,255,0.28);margin-top:1px">Mediterranean · Anglo community</div></div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--gold-lt);font-family:var(--serif)">from ₪2.85M</div>
-              <div style="font-size:8px;letter-spacing:0.08em;background:rgba(201,165,80,0.15);color:var(--gold);padding:1px 5px;text-transform:uppercase;margin-top:2px">Anglo Comm.</div>
-            </div>
-          </div>
-
-          <div onclick="showPage('projects')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,80,0.1);padding:11px 14px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='rgba(201,165,80,0.09)';this.style.borderLeftColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderLeftColor='transparent'">
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;background:rgba(201,165,80,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">💰</div>
-              <div><div style="font-family:var(--serif);font-size:16px;color:white;line-height:1">Giv'at Ze'ev</div><div style="font-size:9px;color:rgba(255,255,255,0.28);margin-top:1px">15 min Jerusalem · Zero tax</div></div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--gold-lt);font-family:var(--serif)">from ₪3.13M</div>
-              <div style="font-size:8px;letter-spacing:0.08em;background:rgba(201,165,80,0.15);color:var(--gold);padding:1px 5px;text-transform:uppercase;margin-top:2px">Save ₪500K+</div>
-            </div>
-          </div>
-
-          <div onclick="showPage('projects')" style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,165,80,0.1);padding:11px 14px;cursor:pointer;transition:all 0.2s;border-left:2px solid transparent;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='rgba(201,165,80,0.09)';this.style.borderLeftColor='var(--gold)'" onmouseout="this.style.background='rgba(255,255,255,0.04)';this.style.borderLeftColor='transparent'">
-            <div style="display:flex;align-items:center;gap:10px">
-              <div style="width:28px;height:28px;background:rgba(201,165,80,0.12);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0">🕍</div>
-              <div><div style="font-family:var(--serif);font-size:16px;color:white;line-height:1">Modi'in &amp; Efrat</div><div style="font-size:9px;color:rgba(255,255,255,0.28);margin-top:1px">Anglo family communities</div></div>
-            </div>
-            <div style="text-align:right">
-              <div style="font-size:12px;color:var(--gold-lt);font-family:var(--serif)">from ₪2.88M</div>
-              <div style="font-size:8px;letter-spacing:0.08em;background:rgba(201,165,80,0.15);color:var(--gold);padding:1px 5px;text-transform:uppercase;margin-top:2px">Family</div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Scrolling ticker -->
-        <div style="border-top:1px solid rgba(201,165,80,0.12);padding-top:12px;margin-top:14px;overflow:hidden">
-          <div style="font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,165,80,0.35);margin-bottom:7px;display:flex;align-items:center;gap:6px"><span style="width:16px;height:1px;background:var(--gold);opacity:0.4;display:inline-block"></span>New developments across Israel</div>
-          <div style="display:flex;gap:0;animation:tickerScroll 22s linear infinite;width:max-content">
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)">🔥 <span style="color:var(--gold-lt)">New Boutique · Central Jerusalem</span> · Exclusive · ₪50K/sqm</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">DUO® Tel Aviv</span> · 50-floor towers</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">Eilat Villas</span> · Private pool · ₪7M</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)">⚠️ <span style="color:var(--gold-lt)">Ben Gurion 93</span> · 2 units left!</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">NIA Jerusalem</span> · 33-floor tower</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">AQUA PORT</span> · Red Sea · VAT-free</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">Techelet</span> · Zero tax · save ₪500K+</span>
-            <!-- duplicate for seamless loop -->
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)">🔥 <span style="color:var(--gold-lt)">New Boutique · Central Jerusalem</span> · Exclusive · ₪50K/sqm</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">DUO® Tel Aviv</span> · 50-floor towers</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">Eilat Villas</span> · Private pool · ₪7M</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)">⚠️ <span style="color:var(--gold-lt)">Ben Gurion 93</span> · 2 units left!</span>
-            <span style="font-size:9px;color:rgba(255,255,255,0.28);white-space:nowrap;padding:0 18px;border-right:1px solid rgba(255,255,255,0.06)"><span style="color:var(--gold-lt)">NIA Jerusalem</span> · 33-floor tower</span>
-          </div>
-          <style>@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}</style>
-        </div>
-
+      <div class="hero-video-wrap">
+        <video autoplay loop muted playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block">
+          <source src="hero.mp4" type="video/mp4">
+        </video>
+        <!-- Bottom fade: keeps any future overlay text readable -->
+        <div class="hero-vid-bottom"></div>
+        <!-- Left blend: softly merges video into the cream left panel -->
+        <div class="hero-vid-left"></div>
       </div>
     </div>
   </section>
