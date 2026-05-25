@@ -104,11 +104,11 @@ nav{
 .stat-num{font-family:var(--serif);font-size:36px;color:var(--navy);line-height:1}
 .stat-label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-mute);margin-top:4px}
 /* Hero Video Panel */
-.hero-right{padding:20px 20px 20px 0;position:relative;overflow:visible;animation:fadeUp 0.8s 0.4s ease both}
-.hero-video-wrap{position:relative;width:100%;height:100%;border-radius:16px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,0.32)}
+.hero-right{padding:16px 0 16px 0;position:relative;overflow:visible;animation:fadeUp 0.8s 0.4s ease both}
+.hero-video-wrap{position:relative;width:100%;height:100%;border-radius:16px 0 0 16px;overflow:hidden;box-shadow:-16px 0 64px rgba(0,0,0,0.18)}
 .hero-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.hero-vid-bottom{position:absolute;bottom:0;left:0;right:0;height:44%;background:linear-gradient(to top,rgba(0,0,0,0.4),transparent);pointer-events:none;z-index:1}
-.hero-vid-left{position:absolute;top:0;left:0;bottom:0;width:130px;background:linear-gradient(to right,var(--cream),transparent);pointer-events:none;z-index:2}
+.hero-vid-bottom{position:absolute;bottom:0;left:0;right:0;height:44%;background:linear-gradient(to top,rgba(0,0,0,0.38),transparent);pointer-events:none;z-index:1}
+.hero-vid-left{position:absolute;top:0;left:0;bottom:0;width:160px;background:linear-gradient(to right,var(--cream) 0%,rgba(246,240,228,0.5) 50%,transparent 100%);pointer-events:none;z-index:2}
 
 /* Why Israel Section */
 .why-section{padding:100px 56px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
@@ -401,12 +401,25 @@ footer{background:#080F1E;padding:48px 56px 32px}
   nav{padding:0 24px}
   .nav-links,.nav-cta{display:none}
   .nav-mobile-btn{display:flex}
-  .hero,.why-section,.tours-section,.tours-hero,.work-hero,.story-hero,.tax-inner,.tour-apply,.contact-content,.edu-inner,.why-hero,.work-panels,.projects-grid,.reasons-grid,.tour-details-grid{grid-template-columns:1fr}
-  .hero-left,.hero-right,.why-section,.tours-section,.tours-hero,.work-hero,.story-hero,.tax-section,.tour-apply,.contact-content,.edu-content,.all-projects,.projects-filter,.project-card,.projects-section,.cta-section,.mission-strip,.footer-top,.footer-links,.edu-strip{padding-left:24px;padding-right:24px}
-  .hero-headline,.section-title,.cta-headline{font-size:38px}
-  .hero-right{display:block;padding:0;height:260px;overflow:hidden}
-  .hero-video-wrap{border-radius:0;height:260px}
-  .hero-vid-left{display:none}
+  .why-section,.tours-section,.tours-hero,.work-hero,.story-hero,.tax-inner,.tour-apply,.contact-content,.edu-inner,.why-hero,.work-panels,.projects-grid,.reasons-grid,.tour-details-grid{grid-template-columns:1fr}
+  /* Hero stays side-by-side on mobile: text left, video right */
+  .hero{grid-template-columns:54fr 46fr;min-height:100svh;align-items:stretch}
+  .hero-left{padding:48px 10px 40px 20px;justify-content:center}
+  .hero-left,.why-section,.tours-section,.tours-hero,.work-hero,.story-hero,.tax-section,.tour-apply,.contact-content,.edu-content,.all-projects,.projects-filter,.project-card,.projects-section,.cta-section,.mission-strip,.footer-top,.footer-links,.edu-strip{padding-left:20px;padding-right:20px}
+  .hero-left{padding-left:20px;padding-right:10px}
+  .hero-headline{font-size:30px;line-height:1.05}
+  .section-title,.cta-headline{font-size:38px}
+  .hero-eyebrow{font-size:9px;margin-bottom:16px}
+  .hero-body{font-size:12px;line-height:1.75;margin-bottom:22px;max-width:none}
+  .hero-btns{flex-direction:column;gap:8px}
+  .hero-btns .btn-primary,.hero-btns .btn-secondary{padding:12px 18px;font-size:10px;text-align:center;width:100%}
+  .hero-stats{gap:14px;margin-top:24px;padding-top:18px;flex-wrap:wrap}
+  .stat-num{font-size:24px}
+  .stat-label{font-size:8px}
+  /* Video panel: no border-radius, full bleed right, fills hero height */
+  .hero-right{display:block;padding:0;overflow:hidden;height:auto}
+  .hero-video-wrap{border-radius:0;height:100%;min-height:100%}
+  .hero-vid-left{width:90px;background:linear-gradient(to right,var(--cream) 0%,rgba(246,240,228,0.6) 55%,transparent 100%)}
   .tours-content{padding-right:0}
   .story-photo{height:300px}
   .city-projects-grid{grid-template-columns:1fr}
